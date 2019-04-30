@@ -1,0 +1,49 @@
+{% extends "main.html" %}
+
+{% block content %}
+<div style="width:600px; margin:0 auto;">
+    <form action="" method="post" novalidate>
+        {{ form.hidden_tag() }}
+        <center>
+            <div class="col-md-8 order-md-1" >
+              <h4 class="mb-3" style="text-align:center;">Регистрация</h4>
+              <form class="needs-validation" novalidate>
+                <div class="row">
+
+                  <div class="col-md-6 mb-3">
+                    <label for="firstName">Имя</label>
+                      {{ form.name(class="form-control") }}
+                  </div>
+
+                  <div class="col-md-6 mb-3">
+                    <label for="lastName">Фамилия</label>
+                    {{ form.surname(class="form-control") }}
+                  </div>
+                </div>
+
+                <div class="mb-3">
+                  <label for="email">Email или номер телефона</label>
+                    {{ form.login(class="form-control",placeholder="you@example.com") }}
+                </div>
+
+                <div class="mb-3">
+                  <label for="address">Адрес</label>
+                    {{ form.adres(class="form-control",placeholder="1234 MainSt") }}
+                </div>
+
+                  <div class="mb-3">
+                  <label for="password">Password</label>
+                    {{ form.password(class="form-control",placeholder="password") }}
+                </div>
+                {{ form.submit(class="btn btn-primary btn-lg btn-block")}}
+              </form>
+            </div>
+        </center>
+    </form>
+</div>
+
+{% endblock %}
+
+{% block title %}
+Регистрация
+{% endblock %}

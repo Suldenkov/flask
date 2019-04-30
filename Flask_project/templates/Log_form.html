@@ -1,0 +1,30 @@
+{% extends "main.html" %}
+
+{% block content %}
+<div style="text-align:center;margin-top:100px;">
+    <h1>Авторизация</h1>
+    <form method="post">
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.username.label }}<br>
+            {{ form.username }}<br>
+        </p>
+        <p>
+            {{ form.password.label }}<br>
+            {{ form.password }}<br>
+        </p>
+        <p>
+            {{ form.submit(class_="btn btn-primary")}}
+            <button id="btn_click" class="btn btn-success" type="submit">Регистрация</button>
+            <script>
+                $('#btn_click').on('click', function() { window.location = "http://127.0.0.1:8080/reg"; });
+            </script>
+        </p>
+    </form>
+
+</div>
+{% endblock %}
+
+{% block title %}
+Вход
+{% endblock %}

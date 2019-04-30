@@ -1,0 +1,43 @@
+{% extends "main.html" %}
+
+
+{% block content %}
+<div class="container">
+    <h3 style="text-align:center;">Мои рецепты</h3>
+    <div class="row">
+        {% for x in list %}
+        <div class="col-md-4">
+            <div class="card mb-4 shadow-sm">
+                <!--<svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><rect fill="#55595c" width="100%" height="100%" style="background: url(/static/photo/suldenkova@mail.rubruleimg.svg)"/><text fill="#eceeef" dy=".3em" x="50%" y="50%"></text></svg><!--<image x="0" y="0" width="300" height="300" xlink:href="/static/photo/suldenkova@mail.rubruleimg.svg"/>-->
+
+                <!--<svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg"  rolepreserveAspectRatio="xMidYMid slice" focusable="false"="img"><img x=0 y=0 src="/static/photo/suldenkova@mail.rubruleimg.svg" height="50" width="50"></svg><rect fill="#55595c" width="100%" height="100%"/><text fill="#eceeef" dy=".3em" x="50%" y="50%"></text>-->
+                <img src="/static/photo/suldenkova@mail.rubruleimg.svg" width="200" height="200">
+                <div class="card-body">
+                    <p class="card-text">{{ x }}</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <a href="/Add_recept">Добавить Рецепт</a>
+</div>
+
+{% endblock %}
+
+
+{% block title %}
+Кондитерская
+{% endblock %}
+
+{% block li %}
+{% if flag_user %}
+<li class="nav-item">
+    <a class="nav-link disabled" href="http://127.0.0.1:8080/Add_recept">+ New recept</a>
+</li>
+{% endif %}
+{% endblock %}

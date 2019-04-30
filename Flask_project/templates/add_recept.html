@@ -1,0 +1,40 @@
+{% extends "main.html" %}
+
+
+{% block content %}
+<div class="col-md-8 order-md-1" style="margin:0 auto; width:600px;">
+    <center>
+        <h1>Добавление рецепта</h1>
+        <form action="" method="post" novalidate enctype="multipart/form-data">
+            {{ form.hidden_tag() }}
+            <p>
+            <div class="col-md-6 mb-3">
+                <h5><label for="firstName">Название блюда</label></h5>
+                {{ form.title(class="form-control") }}
+            </div>
+            </p>
+            <p>
+            <div class="col-md-6 mb-3">
+                <h5><label for="lastName">Рецепт блюда</label></h5>
+                {{ form.content(class="form-control") }}
+            </div>
+            </p>
+            <p>
+                <div class="form-group">
+                    <label for="photo">Выберите файл</label>
+                    <input type="file" class="form-control-file" id="photo" name="file">
+                </div>
+            </p>
+            {{ form.submit(class="btn btn-primary btn-lg btn-block")}}
+        </form>
+    </center>
+</div>
+
+{% endblock %}
+
+
+{% block title %}
+Кондитерская
+{% endblock %}
+
+
